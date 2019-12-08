@@ -128,7 +128,7 @@ namespace Lector.Sharp.Wpf
             try
             {
                 RegisterStartup();
-                SupportHtml5();
+                //SupportHtml5();
                 InitializeComponent();
                 _service = new FarmaService();
                 _listener = new LowLevelKeyboardListener();
@@ -540,7 +540,7 @@ namespace Lector.Sharp.Wpf
             hidden.Topmost = false;
             browser.Topmost = true;
             hidden.Topmost = true;
-            browser.Browser.Navigate(url);
+            browser.Browser.Address = url;
             browser.Visibility = Visibility.Visible;
             browser.WindowState = WindowState.Maximized;
             browser.Show();
