@@ -127,7 +127,7 @@ namespace Lector.Sharp.Wpf
 
             try
             {
-                //RegisterStartup();
+                RegisterStartup();
                 //SupportHtml5();
                 InitializeComponent();
                 _service = new FarmaService();
@@ -138,7 +138,7 @@ namespace Lector.Sharp.Wpf
                 _window = new LowLevelWindowsListener();
 
                 // Leemos los archivos de configuración
-                //_service.LeerFicherosConfiguracion();
+                _service.LeerFicherosConfiguracion();
 
                 // Setamos el comportamiento de la aplicación al presionar una tecla
                 _listener.OnKeyPressed += _listener_OnKeyPressed;
@@ -256,7 +256,7 @@ namespace Lector.Sharp.Wpf
                         if (InfoBrowser.IsVisible)
                             CloseWindowBrowser(InfoBrowser);
                         // Abrimos una ventana con la web personalizada.
-                        OpenWindowBrowser(CustomBrowser, /*_service.UrlNavegarCustom*/ "https://sisfarma.es", InfoBrowser);
+                        OpenWindowBrowser(CustomBrowser, _service.UrlNavegarCustom, InfoBrowser);
                     }
                     // Si presionamos SHIFT + F3
                     else if (_listener.IsHardwareKeyDown(LowLevelKeyboardListener.VirtualKeyStates.VK_SHIFT) && e.KeyPressed == Key.F3)
@@ -270,7 +270,7 @@ namespace Lector.Sharp.Wpf
                             CloseWindowBrowser(CustomBrowser);
 
                         // Abrimos una ventana con la web personalizada.
-                        OpenWindowBrowser(CustomBrowserR, /*_service.UrlRecomendaciones*/ "https://www.google.com/", InfoBrowser);
+                        OpenWindowBrowser(CustomBrowserR, _service.UrlRecomendaciones, InfoBrowser);
                     }
                     // Si presionamos SHIFT + F2
                     else if (_listener.IsHardwareKeyDown(LowLevelKeyboardListener.VirtualKeyStates.VK_SHIFT) && e.KeyPressed == Key.F2)
