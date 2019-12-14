@@ -45,16 +45,16 @@
        PPP superiores. Las aplicaciones de Windows Presentation Foundation (WPF) tienen reconocimiento de PPP automático y no necesitan 
        participar. Las aplicaciones de Windows Forms que apuntan a .NET Framework 4.6 que participan en esta configuración, también 
        deben establecer la configuración 'EnableWindowsFormsHighDpiAutoResizing' en 'true' en app.config. -->
-  <!--
-  <application xmlns="urn:schemas-microsoft-com:asm.v3">
+  
+  <!--<application xmlns="urn:schemas-microsoft-com:asm.v3">
     <windowsSettings>
       <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>
     </windowsSettings>
-  </application>
-  -->
+  </application>-->
+  
   <!-- Habilitar los temas para los controles y cuadros de diálogo comunes de Windows (Windows XP y versiones posteriores) -->
-  <!--
-  <dependency>
+  
+  <!--<dependency>
     <dependentAssembly>
       <assemblyIdentity
           type="win32"
@@ -65,6 +65,6 @@
           language="*"
         />
     </dependentAssembly>
-  </dependency>
-  -->
+  </dependency>-->
+  
 </assembly>
